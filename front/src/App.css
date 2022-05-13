@@ -1,0 +1,38 @@
+*{
+    scroll-behavior:smooth;
+}
+
+#card-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:80%;
+    margin: auto
+}
+
+.subtitle{
+    font-size: 30px;
+    font-weight: bolder;
+    color: rgb(64, 62, 62);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 160px;
+}
+
+.container-img{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: #ffffff;
+    ;
+}
+
+#package-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

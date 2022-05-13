@@ -1,0 +1,82 @@
+.card {
+    position: relative;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+    margin: 20px;
+    margin-bottom: 100px;
+    display: flex;
+    overflow: hidden;
+  }
+
+.card:hover {
+  width: 300px;
+  height: 450px;
+  box-shadow: 3px 3px 30px  rgb(111, 111, 111);
+  transition: 300ms;
+}
+
+.card:hover .card--description{
+  color:white
+}
+
+.card:hover .card--price{
+  color:rgb(255, 157, 0);
+  top: 7px;
+  left: 10px
+
+}
+
+.card:hover .card--price:hover{
+  color: black;
+}
+
+.card:hover .card--description:hover{
+  color: black;
+}
+
+  .card--photo {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card--location {
+    position: absolute;
+    font-size:large;
+    font-weight:bolder;
+    bottom: 8px;
+    left: 10px;
+    color: white;
+  }
+
+  .card--location:hover {
+    color: orange;
+  }
+
+  .card--description{
+      position: absolute;
+      margin: 10px;
+      color: rgba(255, 255, 255, 0);
+      font-weight: bold;
+      font-size: small;
+      margin-top: 50px;
+
+  }
+
+  .card--price{
+      position: absolute;
+      margin: 10px;
+      color: rgba(255, 255, 255, 0);
+      font-weight: bold;
+      font-size:small;
+
+    }
+
+
+
+  .bold {
+      font-weight: bold;
+  }
+  
