@@ -12,10 +12,10 @@ const Package = ({item}) => {
 
             <p>Incluye:</p>
 
-            <h3 className='options--country'>- {item.place.first}</h3>
-            <h3 className='options--country'>- {item.place.second}</h3>
-            <h3 className='options--country'>- {item.place.third}</h3>
-            <h3 className='options--country'>- {item.place.fourth}</h3>
+            <h3 className='options--country'>- {item.firstDestination}</h3>
+            <h3 className='options--country'>- {item.secondDestination}</h3>
+            <h3 className='options--country'>- {item.thirdDestination}</h3>
+            <h3 className='options--country'>- {item.fourthDestination}</h3>
         </div>
 
         <div className='vl'/>
@@ -27,10 +27,10 @@ const Package = ({item}) => {
         </div>
 
         <div className='photos'>
-          <img alt="exp1" className='topleft' src={item.img1}/>
-          <img alt="exp2" className='topright' src={item.img2}/>
-          <img alt="exp3" className='botleft' src={item.img3}/>
-          <img alt="exp4" className='botright' src={item.img4}/>
+          <img alt="exp1" className='topleft' src={item.photoURLFirstDestination}/>
+          <img alt="exp2" className='topright' src={item.photoURLSecondDestination}/>
+          <img alt="exp3" className='botleft' src={item.photoURLThirdDestination}/>
+          <img alt="exp4" className='botright' src={item.photoURLFourthDestination}/>
         </div>
 
     </div>
