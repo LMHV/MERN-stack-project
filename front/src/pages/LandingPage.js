@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Search from '../components/Search'
 import Card from '../components/Card'
@@ -10,12 +10,28 @@ import Footer from '../components/Footer';
 import Ads1 from '../components/Ads1'
 import '../App.css'
 import { UserContext } from '../context/UserContext'
+import axios from 'axios'
 
 const LandingPage = () => {
 
   // This is the way of saving the userContext, also can be saved the setState function to modify user.
-  const { state } = useContext( UserContext )
+  //const { user } = useContext( UserContext )
 
+  const { cards, setCards } = useState(null)
+  //const { packages, setPackages } = useState(null)
+  
+  useEffect(() => {
+    axios.get('http://localhost:4000/api/cards')
+      .then(res => 
+        setCards(res)
+      )
+      .catch(error => console.log(error));
+  }, [])
+
+  useEffect(() => {
+    console.log(cards)
+  }, [cards])
+  
   return (
     <div>
 

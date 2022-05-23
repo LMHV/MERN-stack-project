@@ -1,11 +1,7 @@
 //const mongoose = require('mongoose');
 import mongoose from 'mongoose';
 
-const FlightSchema = new mongoose.Schema({
-    origin: {
-        type: String,
-        required: true
-        },
+const CardSchema = new mongoose.Schema({
     destination: {
         type: String, 
         required: true
@@ -18,10 +14,18 @@ const FlightSchema = new mongoose.Schema({
         type: String,
         required: true 
     },
-    passengers: {
+    price: {
         type: Number,
+        required: true
+    },
+    photoURL: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
         required: true
     }
 })
 
-export default mongoose.model('Flight', FlightSchema);
+export default mongoose.model('Card', CardSchema);

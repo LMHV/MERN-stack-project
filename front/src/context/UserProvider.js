@@ -11,10 +11,10 @@ const dataFixed = {
 
 export const UserProvider = ({ children }) => {
 
-    const [state, setState] = useState(dataFixed);
+    const [user, setUser] = useState(dataFixed);
 
     return (
-        <UserContext.Provider value={{state, setState}}>
+        <UserContext.Provider value={{user, setUser}}>
             {children}
         </UserContext.Provider>
     )

@@ -9,7 +9,9 @@ import morgan from 'morgan'; // Print in console what is being required to the s
 import path from 'path';
 import { connectDB } from './db.js';
 import { PORT } from './config.js';
-import usersRoutes from './routes/user.routes.js';
+import userRoutes from './routes/user.routes.js';
+import cardRoutes from './routes/card.routes.js';
+import packageRoutes from './routes/package.routes.js';
 
 const app = express();
 connectDB()
@@ -21,7 +23,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use('/api/users', usersRoutes );
+app.use('/api/users', userRoutes );
+app.use('/api/cards', cardRoutes);
+app.use('/api/packages', packageRoutes);
 
 // Static Files
 

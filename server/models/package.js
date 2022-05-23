@@ -37,10 +37,30 @@ const PackageSchema = new mongoose.Schema({
         type: String,
         required: true 
     },
-    passengers: {
+    description: {
+        type: String,
+        required: true
+    },
+    price: {
         type: Number,
         required: true
-    }
+    },
+    photoURLFirstDestination: {
+        type: String,
+        required: true
+    },
+    photoURLSecondDestination: {
+        type: String,
+        required: true
+    },
+    photoURLThirdDestination: {
+        type: String,
+        required: true
+    },
+    photoURLFourthDestination: {
+        type: String,
+        required: true
+    },
 })
 
 export default mongoose.model('Package', PackageSchema);
