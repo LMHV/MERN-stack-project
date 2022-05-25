@@ -54,7 +54,6 @@ const LandingPage = () => {
 
       <h2 class="subtitle">Paquetes armados por nosotros</h2>
       <section id="package-section">
-        {console.log(packages)}
         {packages.packages.map(item => <Package item={item} />)}
       </section>
 

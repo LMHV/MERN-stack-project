@@ -1,0 +1,32 @@
+#containerLogin{
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#rectangle{
+    width: 100%;
+    z-index: -1;
+}
+
+
+#formContainer{
+    display: flex;
+    position: absolute;
+}
+
+.form{
+    margin: 20px;
+}
+
+#iconUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

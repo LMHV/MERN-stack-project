@@ -12,6 +12,8 @@ import { PORT } from './config.js';
 import userRoutes from './routes/user.routes.js';
 import cardRoutes from './routes/card.routes.js';
 import packageRoutes from './routes/package.routes.js';
+import cors from 'cors'
+
 
 const app = express();
 connectDB()
@@ -21,6 +23,10 @@ app.set('port', PORT || 3000);
 // Middleware
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "PUT"]
+}))
 
 // Routes
 app.use('/api/users', userRoutes );
