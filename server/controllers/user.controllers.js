@@ -34,11 +34,11 @@ export const createUser = async (req, res) => {
         const existUser = await User.findOne({ email: req.body.email })
         if (existUser) {
             console.log('Email already exist')
-            return
+            return res.json({ status: 'Usuario existente.'})
         }
 
         await user.save();
-        res.json({ status: 'Usuario almacenado' })
+        return res.json({ status: 'Usuario almacenado.' })
     } catch (error) {
         console.log(error.message)
         return res.status(500).json({ error: error.message })
@@ -74,10 +74,9 @@ export const findUser = async (req, res) => {
         // Check if exists
         const existUser = await User.findOne({ email: req.body.email, password: req.body.password })
         if (!existUser) {
-            console.log('User doesnt exists')
-            return
+            return res.json({status: 'Usuario incorrecto. Intente otra vez...'})
         }
-        return res.json({ status: 'User found'})
+        return res.json({ status: 'Usuario correcto. Loading...'})
     } catch (error) {
         console.log(error.message)
         return res.status(500).json({ error: error.message })

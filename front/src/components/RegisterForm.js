@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
-import InputLogin from './InputLogin'
 import './RegisterForm.css'
+import Input from './Input'
 
 const LoginForm = () => {
 
@@ -33,22 +33,23 @@ const LoginForm = () => {
         const password = event.target[2].value
         const age = event.target[3].value
 
+        const label = document.getElementById('responseLabel')
         // Validate users
 
         if (!isValidEmail(email)) {
-            console.log('Invalid Email')
+            label.textContent = 'Invalid Email'
             return
         }
         if (!isValidName(username)) {
-            console.log('Invalid Name')
+            label.textContent = 'Invalid Username'
             return
         }
         if (!isValidPassword(password)) {
-            console.log('Invalid Password')
+            label.textContent = 'Invalid Password'
             return
         }
         if (!isValidAge(age)) {
-            console.log('Invalid Age')
+            label.textContent = 'Invalid Age'
             return
         }
 
@@ -60,7 +61,9 @@ const LoginForm = () => {
                     password: password,
                     age: age
                 });
-            console.log(response.data)
+            const label = document.getElementById("responseLabel");
+            label.textContent = response.data.status
+            //label = response.status
         } catch (error) {
             console.log(error)
         }
@@ -88,18 +91,11 @@ const LoginForm = () => {
 
             <div id="formContainer">
                 <form class="form" onSubmit={handleSubmit}>
-                    <div class="mb-4">
-                        <InputLogin id="username" icon={"person"} text={"Nombre"} />
-                    </div>
-                    <div class="mb-4">
-                        <InputLogin id="email" icon={"mail"} text={"Email"} />
-                    </div>
-                    <div class="mb-4">
-                        <InputLogin id="password" icon={"lock"} text={"Contraseña"} />
-                    </div>
-                    <div class="mb-4">
-                        <InputLogin id="age" icon={"calendar_month"} text={"Edad"} />
-                    </div>
+                    <Input id='username' text={'Nombre'}/>
+                    <Input id='email' text={'Email'}/>
+                    <Input id='password' text={'Contraseña'}/>
+                    <Input id='age' text={'Edad'}/>
+                    <label id="responseLabel"></label>
                     <div>
                         <button type="submit" class="bg-slate-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded shadow-lg">Register</button>
                         <a class="text-white pl-5 underline" href="/login">Go back</a>

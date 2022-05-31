@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import InputLogin from './InputLogin'
 import './LoginForm.css'
 import axios from 'axios'
+import Input from './Input'
 
 const LoginForm = () => {
 
@@ -10,16 +11,18 @@ const LoginForm = () => {
 
         const email = event.target[0].value
         const password = event.target[1].value
-
-        try{
+        
+        try {
             const response = await axios.post('http://localhost:4000/api/users/find',
             {
                 email: email,
                 password: password,
             });
-            console.log(response.data)
+            const label = document.getElementById("responseLabel");
+            label.textContent = response.data.status
+            //label = response.status
 
-        } catch(error){
+        } catch (error) {
             console.log(error)
         }
     }
@@ -43,15 +46,11 @@ const LoginForm = () => {
                     </filter>
                 </defs>
             </svg>
-
             <div id="formContainer">
                 <form class="form" onSubmit={handleSubmit}>
-                    <div class="mb-4">
-                        <InputLogin id="inputEmail" icon={"mail"} text={"Email"} />
-                    </div>
-                    <div class="mb-4">
-                        <InputLogin id="inputContraseña" icon={"lock"} text={"Contraseña"} />
-                    </div>
+                    <Input id='inputEmail' text={'Email'}/>
+                    <Input id='inputContraseña' text={'Contraseña'}/>
+                <label id="responseLabel"></label>
                     <div>
                         <button type="submit" class="bg-slate-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded shadow-lg">LOG IN</button>
                         <a class="text-white pl-5 underline" href="/register">Register now</a>

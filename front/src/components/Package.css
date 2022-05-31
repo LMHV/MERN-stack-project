@@ -9,12 +9,10 @@
 }
 
 .package:hover{
-    background-color: rgba(251, 194, 133, 0.547);
-    width:75%;
+    width:72%;
     height: 325px;
-    box-shadow: 3px 3px 20px #000000;
-    backdrop-filter: blur(10px);
-    transition: 300ms;
+    box-shadow: 1px 1px 10px #000000;
+    transition: 200ms;
 }
 #options{
     width: 25%;

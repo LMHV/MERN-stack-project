@@ -5,7 +5,6 @@ import Card from '../components/Card'
 import Package from '../components/Package'
 import AboutUs from '../components/AboutUs';
 import Footer from '../components/Footer';
-import Ads1 from '../components/Ads1'
 import '../App.css'
 import { UserContext } from '../context/UserContext'
 import axios from 'axios'
@@ -41,7 +40,6 @@ const LandingPage = () => {
 
       <Navbar text="Log In" location="/login" />
       <Search />
-      <Ads1 />
 
       <h2 id="title-cards" class="subtitle">Top destinos mas buscados en Argentina</h2>
       <div id="card-section">

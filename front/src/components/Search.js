@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Search.css'
 import InputLogo from './InputLogo.js'
+import Input from './Input'
 
 export default function Search() {
 
@@ -40,13 +41,13 @@ export default function Search() {
             <div id="container">
                 <h3>Vuelos</h3>
                 <div id='search-inputs' class='items-center'>
-                    <InputLogo id="origen" icon={"flight"} text={"Ingresar origen"} />
-                    <InputLogo id="destino" icon={"room"} text={"Ingresar destino"} />
-                    <InputLogo id="fechaSalida" icon={"today"} text={"Fecha salida"} />
-                    <InputLogo id="fechaRetorno" icon={"today"} text={"Fecha regreso"} />
-                    <InputLogo id="cantPasajeros" icon={"person"} text={"Cantidad pasajeros"} />
+                    <Input id='origen' text={'Origen'}/>
+                    <Input id='destino' text={'Destino'}/>
+                    <Input id='fechaSalida' text={'Fecha Salida'}/>
+                    <Input id='fechaRetorno' text={'Fecha Regreso'}/>
+                    <Input id='cantPasajeros' text={'Pasajeros'}/>
                     <div class="button">
-                        <span class="z-10 text-black absolute w-5 pl-3 py-3">
+                        <span class="z-10 text-black absolute w-5 pl-3 py-2">
                             <i class="material-icons">search</i>
                         </span>
                         <button onClick={searchFlight} class="bg-orange-400 hover:bg-white text-black font-bold py-2 px-4 rounded shadow pl-10">Buscar</button>
