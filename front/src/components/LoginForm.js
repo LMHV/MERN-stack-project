@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import InputLogin from './InputLogin'
 import './LoginForm.css'
 import axios from 'axios'
 import Input from './Input'

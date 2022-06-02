@@ -11,7 +11,7 @@
 .package:hover{
     width:72%;
     height: 325px;
-    box-shadow: 1px 1px 10px #000000;
+    box-shadow: 1px 1px 5px 1px #000000;
     transition: 200ms;
 }
 #options{

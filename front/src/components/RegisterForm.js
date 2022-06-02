@@ -96,7 +96,7 @@ const LoginForm = () => {
                     <Input id='password' text={'Contraseña'}/>
                     <Input id='age' text={'Edad'}/>
                     <label id="responseLabel"></label>
-                    <div>
+                    <div className='form--buttons'>
                         <button type="submit" class="bg-slate-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded shadow-lg">Register</button>
                         <a class="text-white pl-5 underline" href="/login">Go back</a>
                     </div>
