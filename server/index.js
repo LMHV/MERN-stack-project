@@ -12,6 +12,7 @@ import { PORT } from './config.js';
 import userRoutes from './routes/user.routes.js';
 import cardRoutes from './routes/card.routes.js';
 import packageRoutes from './routes/package.routes.js';
+import flightRoutes from './routes/flight.routes.js'
 import cors from 'cors'
 
 
@@ -32,6 +33,7 @@ app.use(cors({
 app.use('/api/users', userRoutes );
 app.use('/api/cards', cardRoutes);
 app.use('/api/packages', packageRoutes);
+app.use('/api/flights', flightRoutes)
 
 // Static Files
 
