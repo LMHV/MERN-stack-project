@@ -8,11 +8,12 @@ export default function Search() {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
+        console.log('aca llega')
         const origen = event.target[0].value
         const destino = event.target[1].value
         const fechaSalida = event.target[2].value
         const fechaRegreso = event.target[3].value
-        const cantPasajeros = event.target[4].value
+        const pasajeros = event.target[4].value
 
 
         try {
@@ -22,10 +23,16 @@ export default function Search() {
                     destino: destino,
                     fechaSalida: fechaSalida,
                     fechaRegreso: fechaRegreso,
-                    cantPasajeros: cantPasajeros
+                    pasajeros: pasajeros
                 });
-            const label = document.getElementById("responseLabel");
-            label.textContent = response.data.status
+
+            const label = document.getElementById("label");
+
+            if(response){
+                label.textContent = response
+            } else {
+                label.textContent = response.data.status
+            }
             //label = response.status
         } catch (error) {
             console.log(error)
@@ -54,6 +61,7 @@ export default function Search() {
                         </div>
                     </div>
                 </form>
+                <label id='label'></label>
             </div>
         </div>
     )
