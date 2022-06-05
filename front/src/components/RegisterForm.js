@@ -61,9 +61,13 @@ const LoginForm = () => {
                     password: password,
                     age: age
                 });
-            const label = document.getElementById("responseLabel");
-            label.textContent = response.data.status
-            //label = response.status
+            if (response.data.status === 'Exitoso') {
+                window.location = 'http://localhost:3000/logged'
+                return
+            } else {
+                const label = document.getElementById("responseLabel");
+                label.textContent = response.data.status
+            }
         } catch (error) {
             console.log(error)
         }
@@ -91,10 +95,10 @@ const LoginForm = () => {
 
             <div id="formContainer">
                 <form class="form" onSubmit={handleSubmit}>
-                    <Input id='username' text={'Nombre'}/>
-                    <Input id='email' text={'Email'}/>
-                    <Input id='password' text={'Contraseña'}/>
-                    <Input id='age' text={'Edad'}/>
+                    <Input id='username' text={'Nombre'} />
+                    <Input id='email' text={'Email'} />
+                    <Input id='password' text={'Contraseña'} />
+                    <Input id='age' text={'Edad'} />
                     <label id="responseLabel"></label>
                     <div className='form--buttons'>
                         <button type="submit" class="bg-slate-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded shadow-lg">Register</button>

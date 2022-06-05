@@ -25,6 +25,10 @@ const CardSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true
+    },
+    offer: {
+        type: String,
+        required: true
     }
 })
 

@@ -10,16 +10,21 @@ const LoginForm = () => {
 
         const email = event.target[0].value
         const password = event.target[1].value
-        
+
         try {
             const response = await axios.post('http://localhost:4000/api/users/find',
-            {
-                email: email,
-                password: password,
-            });
-            const label = document.getElementById("responseLabel");
-            label.textContent = response.data.status
-            //label = response.status
+                {
+                    email: email,
+                    password: password,
+                });
+
+            if (response.data.status === 'Exitoso') {
+                window.location = 'http://localhost:3000/logged'
+                return
+            } else {
+                const label = document.getElementById("responseLabel");
+                label.textContent = response.data.status
+            }
 
         } catch (error) {
             console.log(error)
@@ -47,9 +52,9 @@ const LoginForm = () => {
             </svg>
             <div id="formContainer">
                 <form class="form" onSubmit={handleSubmit}>
-                    <Input id='inputEmail' text={'Email'}/>
-                    <Input id='inputContraseña' text={'Contraseña'}/>
-                <label id="responseLabel"></label>
+                    <Input id='inputEmail' text={'Email'} />
+                    <Input id='inputContraseña' text={'Contraseña'} />
+                    <label id="responseLabel"></label>
                     <div>
                         <button type="submit" class="bg-slate-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded shadow-lg">LOG IN</button>
                         <a class="text-white pl-5 underline" href="/register">Register now</a>

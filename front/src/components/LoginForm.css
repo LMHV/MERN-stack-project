@@ -30,3 +30,7 @@
     align-items: center;
 }
 
+#responseLabel{
+    color:red;
+    font-weight: bold;
+}

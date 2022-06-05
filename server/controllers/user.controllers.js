@@ -1,4 +1,5 @@
 import User from '../models/user.js'
+import session from 'express-session'
 
 export const getUsers = async (req, res) => {
     try {
@@ -38,7 +39,7 @@ export const createUser = async (req, res) => {
         }
 
         await user.save();
-        return res.json({ status: 'Usuario almacenado.' })
+        return res.json({status: 'Exitoso'})
     } catch (error) {
         console.log(error.message)
         return res.status(500).json({ error: error.message })
@@ -70,13 +71,13 @@ export const deleteUser = async (req, res) => {
 export const findUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-
+    
         // Check if exists
         const existUser = await User.findOne({ email: req.body.email, password: req.body.password })
         if (!existUser) {
             return res.json({status: 'Usuario incorrecto. Intente otra vez...'})
         }
-        return res.json({ status: 'Usuario correcto. Loading...'})
+        return res.json({ status: 'Exitoso'})
     } catch (error) {
         console.log(error.message)
         return res.status(500).json({ error: error.message })

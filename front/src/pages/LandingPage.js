@@ -31,10 +31,6 @@ const LandingPage = () => {
       .catch(error => console.log(error))
   }, [])
 
-  /*useEffect(() => {
-    console.log(cards)
-  }, [cards])
-  */
   return (
     <div>
 

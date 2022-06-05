@@ -61,6 +61,10 @@ const PackageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    offer: {
+        type: String,
+        required: true
+    }
 })
 
 export default mongoose.model('Package', PackageSchema);

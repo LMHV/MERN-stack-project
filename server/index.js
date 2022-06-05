@@ -1,9 +1,3 @@
-//const express = require('express');
-//const morgan = require('morgan'); // Print in console what is being required to the server
-//const path = require('path');
-//const { connectDB } = require('./db.js');
-//const { PORT } = require('./config.js');
-//const { getUsers, getUser, createUser, deleteUser, modifyUser } = require('./routes/user.routes.js');
 import express from 'express';
 import morgan from 'morgan'; // Print in console what is being required to the server
 import path from 'path';
@@ -14,7 +8,7 @@ import cardRoutes from './routes/card.routes.js';
 import packageRoutes from './routes/package.routes.js';
 import flightRoutes from './routes/flight.routes.js'
 import cors from 'cors'
-
+import session from 'express-session'
 
 const app = express();
 connectDB()
@@ -27,6 +21,11 @@ app.use(express.json());
 app.use(cors({
     origin: "*",
     methods: ["GET", "POST", "DELETE", "PUT"]
+}))
+app.use(session({
+    secret: 'secretIDsession',
+    cookie: { maxAge: 150000 },
+    saveUninitialized: false
 }))
 
 // Routes
